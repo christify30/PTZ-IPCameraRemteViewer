@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<title>SMART CITY</title>
+	<link href="./dist/core.css" rel="stylesheet">
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/style.css" rel="stylesheet">
+	<link href="./css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="./css/bootstrap-select.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+
+<body style="background:black">
+	<script src="./dist/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/swfobject.min.js"></script>
+  <script src="./dist/flv.js"></script>
+  <script src="./dist/socket.io.js"></script>
+	<script src="./dist/core.js"></script>
+	<!--<script src="./js/onvif.js"></script>-->
+	<script type="text/javascript">
+	</script>
+	
+
+	
+      <table >
+		 <tr>
+			 <td></td>
+			 <td><p style="z-index: 500; text-align: center; padding-top: 10px;" id="bt1" class="glyphicon glyphicon-menu-up" onclick="y()"></p></td>
+			 <td></td>
+		 </tr>
+		 <tr>
+			<td><p style=" padding-top:  100px; z-index: 500; padding-left: 20px" id="bt2" class="glyphicon glyphicon-menu-left" onclick="mx()"></p></td>
+			<td><p style=" width: 100%; text-align:center; opacity: 0.5; color: green;">FALCOND</p></td>
+			<td><p style="z-index: 500; text-align: right; padding-top: 100px; padding-right: 20px" id="bt3" class="glyphicon glyphicon-menu-right" onclick="x()"></p></td>
+		 </tr>
+		 <tr>
+			<td></td>
+			<td><p class="glyphicon glyphicon-menu-down" style="text-align: center; z-index: 500; padding-top: 100px;" id="bt4" onclick="my()"></p></td>
+			<td></td>
+		 </tr>
+	  </table>
+	  <table style="position:fixed; width:100%; height:500px; border:2px solid yellow; top: 0px">
+		  <td><div  id="videocontainer" style="width:100%; height: 500px; border: 2px solid green;"></div></td>
+	  </table>
+	<div class="container-fluid">
+		<div class="form-inline">
+			<button id="search" type="button" style="display:none" class="btn btn-primary" onclick="startsearch()">Scan Cameras</button>
+			<select style="width:100%" class="form-control" id="cameras" name="cameras">
+				<option id="select-default" value="rtsp://192.168.8.100:5300/onvif1">Camera1</option>
+				<option id="select-default" >unknown</option>
+            </select>
+		</div>
+		<div class="form-inline">
+			<input class="form-control" id="username" name="username" type="text" placeholder="Username" style="display:none" />
+			<input class="form-control" id="password" name="password" type="text" placeholder="Password" style="display:none" />
+			<button id="play" onclick="playvideo()" type="button" class="btn btn-success block">View Estate</button>
+		</div>
+	</div>
+ 
+	<table style="position:fixed;  border-radius:50%; opacity: 0.3; top:270px; left: 3%; z-index:550; width:20%; border:1px groove white; height:25%">
+		<tr>
+			<td></td>
+			<td><button style="width:100%; height: 100%;"  onclick="y()">Up</button></td>
+			<td></td>
+	    </tr>
+		<tr>
+		  <td><button style="width:100%; height: 100%" onclick="mx()">Left</button></td>
+		  <td></td>
+		  <td><button style="width:100%; height: 100%" onclick="x()">Right</button></td>
+	  </tr>
+	  <tr>
+		  <td></td>
+		  <td><button style="width:100%; height: 100%" onclick="my()">Down</button></td>
+		  <td></td>
+	  </tr>
+	</table>
+    <canvas id="canvas" width="1000" height="500" style="display: none"></canvas>
+    <img id="img1" width="1000" height="500px" style="display:none">
+
+</body>
+
+</html>
